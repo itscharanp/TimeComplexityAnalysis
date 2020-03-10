@@ -1,0 +1,38 @@
+#BRUTE_FORCE
+------------------------------------------
+package practice;
+import java.util.*;
+class Practice {
+   public static void main(String args[])
+   {
+        Scanner in = new Scanner(System.in);
+        String str = in.next();
+        String patt = in.next();
+        
+        char s[] = str.toCharArray();
+        char p[] = str.toCharArray();
+        
+        int m = s.length;
+        int n = p.length;
+        boolean found = true;
+        for(int i=0;i<m-n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                   if(s[i+j] != p[j])
+                   {
+                      found = false;
+                      break;
+                   }
+            }
+            if(found)
+            {
+                found = true;
+            }
+        }
+        System.out.println(found);        
+   }
+}
+------------------------------------------------
+
+

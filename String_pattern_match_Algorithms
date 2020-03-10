@@ -1,4 +1,4 @@
-#BRUTE_FORCE
+#BRUTE_FORCEc Time(O(n^2))
 ------------------------------------------
 package practice;
 import java.util.*;
@@ -33,6 +33,10 @@ class Practice {
         System.out.println(found);        
    }
 }
-------------------------------------------------
+------------------------------------------------4
+# KMP ALGORITHM (O(M) + O(N))
+
+
+
 
 

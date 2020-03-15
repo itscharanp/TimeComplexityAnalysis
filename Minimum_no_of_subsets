@@ -1,0 +1,58 @@
+package practice;
+import java.util.*; 
+class Practice {  
+ 
+      
+    public static void combsutil(int arr[],int n,int r,int data[],int index,int i,int sum)
+    {
+        int s = 0;
+        if(index == r)
+        {
+               for(int k=0;k<r;k++)
+               {
+                   
+                    s += data[k];
+                    
+               }
+               if(s == sum){
+               for(int k=0;k<r;k++)
+               {   
+                    System.out.print(data[k]+" ");
+               }
+               System.out.println();
+               }
+               
+           return;    
+        }
+        if(i>=n)
+           return;
+        
+        data[index] = arr[i]; 
+        combsutil(arr,n,r,data,index+1,i+1,sum);
+        
+        
+        combsutil(arr,n,r,data,index,i+1,sum);
+    }
+    
+    public static void printcombs(int[] arr,int n,int r,int sum)
+    {
+        int[] data = new int[r]; 
+        combsutil(arr,n,r,data,0,0,sum);
+       
+    }
+    public static void main(String args[])
+    {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int arr[] = new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arr[i] = in.nextInt();
+        }
+        int r = in.nextInt();
+        int sum = in.nextInt();
+        printcombs(arr,n,r,sum); 
+    }
+}
+
+

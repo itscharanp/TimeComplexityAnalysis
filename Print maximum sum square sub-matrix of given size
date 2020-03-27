@@ -1,0 +1,69 @@
+package practice3;
+import java.util.*;
+import java.util.regex.*;
+public class Practice3
+{
+        public static void findmaxsum(ArrayList<ArrayList<Integer>> arr)
+        {
+            int n = arr.size();
+            int narr[][] = new int[n][n];
+            int max = Integer.MIN_VALUE;
+            for(int i=0;i<n;i++)
+            {
+                for(int j=0;j<n;j++)
+                {
+                    narr[i][j] = arr.get(i).get(j);
+                }
+            }
+          
+           int sum = 0;
+            for(int t=0;t<=n-3;t++){
+            
+                
+                
+                int r = 0;
+                while(r <= n-3){
+                sum = 0;
+                for(int j = t;j<t+3;j++)
+                {
+                   
+                    
+                        for(int i=r;i<r+3;i++)
+                        {
+                         sum += narr[i][j];
+                        }
+                }
+         
+                
+                    if(max < sum)
+                         max = sum;
+                    r++;
+                }      
+            }
+            
+        System.out.print(max + " ");
+            
+            
+            
+        }
+        public static void main (String[] args)
+	 {
+	     Scanner in = new Scanner(System.in);
+             System.out.println("Enter the size of the of the matrix m and n");
+             int m = in.nextInt();
+             int n = in.nextInt();
+             ArrayList<ArrayList<Integer>> arr = new ArrayList<>();
+             for(int i=0;i<m;i++)
+             {
+                 List<Integer> li = new ArrayList<Integer>();
+                 for(int j=0;j<n;j++)
+                 {
+                    li.add(in.nextInt());
+                 }
+                 arr.add((ArrayList<Integer>) li);
+             }
+             findmaxsum(arr);
+	 }
+}
+
+
